@@ -1,6 +1,4 @@
 
-
-
 resource "aws_autoscaling_attachment" "bastions-madina-kubernetes-com" {
   elb                    = "${aws_elb.bastion-madina-kubernetes-com.id}"
   autoscaling_group_name = "${aws_autoscaling_group.bastions-madina-kubernetes-com.id}"
