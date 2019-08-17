@@ -3,8 +3,8 @@
 resource "aws_autoscaling_group" "nodes-madina-kubernetes-com" {
   name                 = "nodes.madina-kubernetes.com"
   launch_configuration = "${aws_launch_configuration.nodes-madina-kubernetes-com.id}"
-  max_size             = 2
-  min_size             = 2
+  max_size             = "${var.node_max_size}" 
+  min_size             = "${var.node_min_size}"
   vpc_zone_identifier  = ["${aws_subnet.us-east-2b-madina-kubernetes-com.id}", "${aws_subnet.us-east-2c-madina-kubernetes-com.id}"]
 
   tag = {
