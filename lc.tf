@@ -2,7 +2,7 @@
 resource "aws_launch_configuration" "bastions-madina-kubernetes-com" {
   name_prefix                 = "bastions.madina-kubernetes.com-"
   image_id                    = "ami-0dd3b1702120579bd"
-  instance_type               = "${var.instance_type}"
+  instance_type               = "t2.micro"
   key_name                    = "${aws_key_pair.kubernetes-madina-kubernetes-com-03a971121e165f0d3de5b3a63278eb86.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.bastions-madina-kubernetes-com.id}"
   security_groups             = ["${aws_security_group.bastion-madina-kubernetes-com.id}"]

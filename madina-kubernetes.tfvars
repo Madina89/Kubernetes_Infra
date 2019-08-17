@@ -1,2 +1,2 @@
-master_instance_type  =  "2t.micro"
-node_instance_type    =  "2t.micro"
+master_instance_type  =  "t2.micro"
+node_instance_type    =  "t2.micro"
