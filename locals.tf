@@ -1,0 +1,26 @@
+locals = {
+  bastion_autoscaling_group_ids     = ["${aws_autoscaling_group.bastions-madina-kubernetes-com.id}"]
+  bastion_security_group_ids        = ["${aws_security_group.bastion-madina-kubernetes-com.id}"]
+  bastions_role_arn                 = "${aws_iam_role.bastions-madina-kubernetes-com.arn}"
+  bastions_role_name                = "${aws_iam_role.bastions-madina-kubernetes-com.name}"
+  cluster_name                      = "madina-kubernetes.com"
+  master_autoscaling_group_ids      = ["${aws_autoscaling_group.master-us-east-2c-masters-madina-kubernetes-com.id}"]
+  master_security_group_ids         = ["${aws_security_group.masters-madina-kubernetes-com.id}"]
+  masters_role_arn                  = "${aws_iam_role.masters-madina-kubernetes-com.arn}"
+  masters_role_name                 = "${aws_iam_role.masters-madina-kubernetes-com.name}"
+  node_autoscaling_group_ids        = ["${aws_autoscaling_group.nodes-madina-kubernetes-com.id}"]
+  node_security_group_ids           = ["${aws_security_group.nodes-madina-kubernetes-com.id}"]
+  node_subnet_ids                   = ["${aws_subnet.us-east-2b-madina-kubernetes-com.id}", "${aws_subnet.us-east-2c-madina-kubernetes-com.id}"]
+  nodes_role_arn                    = "${aws_iam_role.nodes-madina-kubernetes-com.arn}"
+  nodes_role_name                   = "${aws_iam_role.nodes-madina-kubernetes-com.name}"
+  region                            = "us-east-2"
+  route_table_private-us-east-2b_id = "${aws_route_table.private-us-east-2b-madina-kubernetes-com.id}"
+  route_table_private-us-east-2c_id = "${aws_route_table.private-us-east-2c-madina-kubernetes-com.id}"
+  route_table_public_id             = "${aws_route_table.madina-kubernetes-com.id}"
+  subnet_us-east-2b_id              = "${aws_subnet.us-east-2b-madina-kubernetes-com.id}"
+  subnet_us-east-2c_id              = "${aws_subnet.us-east-2c-madina-kubernetes-com.id}"
+  subnet_utility-us-east-2b_id      = "${aws_subnet.utility-us-east-2b-madina-kubernetes-com.id}"
+  subnet_utility-us-east-2c_id      = "${aws_subnet.utility-us-east-2c-madina-kubernetes-com.id}"
+  vpc_cidr_block                    = "${aws_vpc.madina-kubernetes-com.cidr_block}"
+  vpc_id                            = "${aws_vpc.madina-kubernetes-com.id}"
+}
