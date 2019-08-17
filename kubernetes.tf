@@ -1,7 +1,5 @@
 
-provider "aws" {
-  region = "us-east-2"
-}
+
 
 resource "aws_autoscaling_attachment" "bastions-madina-kubernetes-com" {
   elb                    = "${aws_elb.bastion-madina-kubernetes-com.id}"
