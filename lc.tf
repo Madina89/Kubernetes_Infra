@@ -2,7 +2,7 @@
 resource "aws_launch_configuration" "bastions-madina-kubernetes-com" {
   name_prefix                 = "bastions.madina-kubernetes.com-"
   image_id                    = "ami-0dd3b1702120579bd"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-madina-kubernetes-com-03a971121e165f0d3de5b3a63278eb86.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.bastions-madina-kubernetes-com.id}"
   security_groups             = ["${aws_security_group.bastion-madina-kubernetes-com.id}"]
@@ -24,7 +24,7 @@ resource "aws_launch_configuration" "bastions-madina-kubernetes-com" {
 resource "aws_launch_configuration" "master-us-east-2c-masters-madina-kubernetes-com" {
   name_prefix                 = "master-us-east-2c.masters.madina-kubernetes.com-"
   image_id                    = "ami-0dd3b1702120579bd"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.master_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-madina-kubernetes-com-03a971121e165f0d3de5b3a63278eb86.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-madina-kubernetes-com.id}"
   security_groups             = ["${aws_security_group.masters-madina-kubernetes-com.id}"]
@@ -47,7 +47,7 @@ resource "aws_launch_configuration" "master-us-east-2c-masters-madina-kubernetes
 resource "aws_launch_configuration" "nodes-madina-kubernetes-com" {
   name_prefix                 = "nodes.madina-kubernetes.com-"
   image_id                    = "ami-0dd3b1702120579bd"
-  instance_type               = "t2.micro"
+  instance_type               = "${var.node_instance_type}"
   key_name                    = "${aws_key_pair.kubernetes-madina-kubernetes-com-03a971121e165f0d3de5b3a63278eb86.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.nodes-madina-kubernetes-com.id}"
   security_groups             = ["${aws_security_group.nodes-madina-kubernetes-com.id}"]
